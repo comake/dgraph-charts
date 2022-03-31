@@ -43,13 +43,7 @@ Create a semVer/calVer version from image.tag so that it can be safely use in
 version comparisions used to toggle features or behavior.
 */}}
 {{- define "dgraph.version" -}}
-{{- $safeVersion := .Values.image.tag -}}
-{{- if (eq $safeVersion "shuri") -}}
-  {{- $safeVersion = "v20.07.1" -}}
-{{- else if  (regexMatch "^[^v].*" $safeVersion) -}}
-  {{- $safeVersion = "v50.0.0" -}}
-{{- end -}}
-{{- printf "%s" $safeVersion -}}
+{{ print "21.12.0" }}
 {{- end -}}
 
 
